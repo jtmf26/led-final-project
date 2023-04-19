@@ -12,7 +12,7 @@ from unicornhatmini import UnicornHATMini
 text = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 #@&!?{}<>[]();:.,'%*=+-=$_\\/ :-)"
 text = "Where did it all go wrong? :|"
 text = "Hello Hodgeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeey!!!"
-text = "I am the great and mighty Oz!"
+text = "Programming II"
 
 unicornhatmini = UnicornHATMini()
 
