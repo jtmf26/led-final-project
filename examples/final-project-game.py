@@ -13,7 +13,7 @@ uh = UnicornHATMini()
 width, height = uh.get_shape()
 uh.set_brightness(0.5)
 
-class JumpingGame():
+class game_player():
     def __init__(self):
         self.colors = (
             (255, 0, 0),
@@ -53,11 +53,34 @@ class JumpingGame():
         uh.show()
 
         
-        
-        
 
 
-game = JumpingGame()
+class obstacles():
+    def __init__(self):
+        self.pos_x = 10
+        self.pos_y = 4
+        self.size = 3
+        
+    def update(self):
+        for x in range(width):
+            for y in range(self.size):
+                if self.pos_x > 0:
+                    self.pos_x - 1
+                    uh.set_pixel(self.pos_x, self.pos_y + y, 42, 26, 14)
+           
+     
+            
+    
+   
+            
+           
+           
+                
+                
+
+
+game = game_player()
+obstacle = obstacles()
 
 button_a = Button(5)
 button_b = Button(6)
@@ -70,3 +93,5 @@ button_x.when_pressed = game.color_picker
 
 while game.game_on:
     game.update()
+    obstacle.update()
+    
