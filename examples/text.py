@@ -12,7 +12,7 @@ from unicornhatmini import UnicornHATMini
 text = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 #@&!?{}<>[]();:.,'%*=+-=$_\\/ :-)"
 text = "Where did it all go wrong? :|"
 text = "Hello Hodgeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeey!!!"
-text = "Erica"
+text = "Game Over"
 
 unicornhatmini = UnicornHATMini()
 
@@ -53,7 +53,7 @@ while True:
     for y in range(display_height):
         for x in range(display_width):
             hue = (time.time() / 10.0) + (x / float(display_width * 2))
-            r, g, b = [int(c * 255) for c in hsv_to_rgb(hue, 1.0, 1.0)]
+            r, g, b = [255, 0, 0]
             if image.getpixel((x + offset_x, y)) == 255:
                 unicornhatmini.set_pixel(x, y, r, g, b)
             else:
@@ -63,5 +63,9 @@ while True:
     if offset_x + display_width > image.size[0]:
         offset_x = 0
 
+    unicornhatmini.show()
+    time.sleep(0.05)
+    unicornhatmini.set_brightness(0.3)
+    unicornhatmini.clear()
     unicornhatmini.show()
     time.sleep(0.05)
