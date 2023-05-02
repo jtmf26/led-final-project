@@ -11,7 +11,7 @@ for device in devices:
 	print(device.path, device.name, device.phys)
 
 # Once you know which device path, you can set up the device.
-gamepad = evdev.InputDevice('/dev/input/event4')
+gamepad = evdev.InputDevice('/dev/input/event6')
 
 # Below are very basic examples that are not debounced or anything
 # the controller also supports events, which make debouncing easy,
@@ -28,10 +28,13 @@ def buttons(pad):
 	keys = pad.active_keys()
 	if 289 in keys:
 		print('A')
+		return 'A'
 	if 290 in keys:
 		print('B')
+		return 'B'
 	if 288 in keys:
 		print('X')
+		return 'X'
 	if 291 in keys:
 		print('Y')
 
@@ -43,14 +46,14 @@ def buttons(pad):
 def d_pad(pad):
 	if pad.absinfo(0).value == 0:
 		print('LEFT')
+		return 'LEFT'
 	if pad.absinfo(0).value == 255:
 		print('RIGHT')
+		return 'RIGHT'
 	
 	if pad.absinfo(1).value == 0:
 		print('UP')
 	if pad.absinfo(1).value == 255:
 		print('DOWN')
 
-while True:
-	buttons(gamepad)
-	d_pad(gamepad)
+

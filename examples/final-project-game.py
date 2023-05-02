@@ -4,6 +4,7 @@ import time
 import math
 import random
 import colorsys
+import controllertest as pad
 
 
 from gpiozero import Button
@@ -92,7 +93,7 @@ class obstacles():
                 
         elif self.pos_x == 0:
             if self.delay > 0.01:
-                self.delay -= 0.01
+                self.delay -= 0.005
             uh.clear()
             self.pos_x = 16
             self.pos_y = random.randint(0, 3)
@@ -108,14 +109,11 @@ class obstacles():
       
     def get_pos_x(self):
         return self.pos_x
-      
-                
                 
                 
                     
 game = game()
 obstacle = obstacles()
-
 
 
 button_a = Button(5)
@@ -124,13 +122,22 @@ button_x = Button(16)
 button_y = Button(24)
 
 
+
+
 button_a.when_pressed = game.player_up
 button_b.when_pressed = game.player_down
 button_x.when_pressed = game.color_picker
 
 
+
+
+
+
+
+
 while game.game_on == False:
-    button_y.when_pressed = game.start_game
+    if pad.buttons(pad.gamepad) == 'X':
+        game.start_game()
     
     
 
@@ -139,6 +146,12 @@ while game.game_on:
     obstacle.update()
     obstacle.get_pos_x()
     obstacle.get_pos_y()
+    if pad.d_pad(pad.gamepad) == 'LEFT':
+        game.player_up()
+    elif pad.d_pad(pad.gamepad) == 'RIGHT':
+        game.player_down()
+    elif pad.buttons(pad.gamepad) == 'A':
+        game.color_picker() 
     game.get_pos_x()
     game.get_pos_y()
     if game.get_pos_y() in obstacle.get_pos_y() and game.get_pos_x() == obstacle.get_pos_x():
