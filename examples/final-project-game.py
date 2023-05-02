@@ -7,7 +7,7 @@ import colorsys
 import controllertest as pad
 
 
-from gpiozero import Button
+
 
 from unicornhatmini import UnicornHATMini
 uh = UnicornHATMini()
@@ -114,20 +114,6 @@ class obstacles():
                     
 game = game()
 obstacle = obstacles()
-
-
-button_a = Button(5)
-button_b = Button(6)
-button_x = Button(16)
-button_y = Button(24)
-
-
-
-
-button_a.when_pressed = game.player_up
-button_b.when_pressed = game.player_down
-button_x.when_pressed = game.color_picker
-
 
 
 
