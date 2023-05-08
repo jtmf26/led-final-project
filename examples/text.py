@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import time
 import sys
+import controllertest as pad
 
 from colorsys import hsv_to_rgb
 
@@ -69,3 +70,9 @@ while True:
     unicornhatmini.clear()
     unicornhatmini.show()
     time.sleep(0.05)
+    if pad.buttons(pad.gamepad) == 'Y':
+        with open("final-project-game.py") as g:
+            exec(g.read())
+    elif pad.d_pad(pad.gamepad) == 'UP':
+        exit()
+    
