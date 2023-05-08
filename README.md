@@ -27,7 +27,7 @@ Latest/development library from GitHub:
 * `cd unicornhatmini-python`
 * `sudo ./install.sh`
 
-London Bridge
+# London Bridge
 ---
 To start the game press the X button, or the one on the top of the right side on the game controller. Once the game has started, a small colored dot appears that represents the player. To change the color of your player simply press the A button, or the one on the right, until you find the color you most like. The objective of the game is to avoid the obstacles as they fall from the sky. Once you have hit the start button, the game has begun and the objects will begin to fall. Using the left and right arrow buttons on the left side of the controller, you can move your player left and right to avoid hitting the falling obstacles. If you fail to avoid one of the obstacles, the game is over and you lose. To start the game again press Y or the button on the left to restart the game. If you don't want to restart the game press the up arrow on the top to quit. Good luck!
 
@@ -125,3 +125,12 @@ Erica's Favorite Code
 ---
 
 My favorite part of the code was the initializer of the class game because it is essentially the backbone of our project. I specifically liked the colors part because we were able to not just make the game cool technically, but also add a fun creative twist to it. Also we were able to use a tuple to do it learning a bit more about lists within Python on the way. Additionally, I got to experience how to make something random in Python as we struggled a little bit with that before figuring it out. List comprehension is one of the important topics of our class and I feel as thought this part of the code allowed me to both understand that better and add a fun twist to our game at the same time.
+
+Citations
+
+Chatterjee, C. C. (2019, July 31). Basics of the classic CNN. Medium. Retrieved May 2, 2023, from https://towardsdatascience.com/basics-of-the-classic-cnn-a3dce1225add 
+
+Engber, D. (2005, September 2). How do they estimate hurricane damage? Slate Magazine. Retrieved May 2, 2023, from https://slate.com/news-and-politics/2005/09/how-do-they-estimate-hurricane-damage.html#:~:text=Risk%2Dmodeling%20companies%20predict%20damage,the%20storm%20at%20various%20locations 
+
+Mandal, M. (2023, April 28). Introduction to convolutional neural networks (CNN). Analytics Vidhya. Retrieved May 2, 2023, from https://www.analyticsvidhya.com/blog/2021/05/convolutional-neural-networks-cnn/ 
+
