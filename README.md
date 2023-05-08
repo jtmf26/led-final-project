@@ -52,13 +52,57 @@ Jason's Favorite Code
 
 ---
 
-My favorite part of the code are the lines that handle the player - object collisions. Each class has a getter to find the x and y position. In the case of the obstacle, I had to use list comprehension to add all the y elements to a list. Then in checks to see if the y position of the player is in the list of y positions for the obstacle, and if the x positions are the same. If they are, it executes the text.py file, an example file that was included in the unicorn hat mini repo, which flashes game over
+My favorite part of the code are the lines that handle the player - object collisions. Each class has a getter to find the x and y position. In the case of the obstacle, I had to use list comprehension to add all the y elements to a list. Then it checks to see if the y position of the player is in the list of y positions for the obstacle, and if the x positions are the same. If they are, it executes the text.py file, an example file that was included in the unicorn hat mini repo, which flashes game over
     
  
                 
 
 Molly's Favorite Code
 ---
+    class obstacles():
+        def __init__(self):
+            self.pos_x = 16
+            self.pos_y = random.randint(0, 3)
+            self.size = random.randint(1, 4)
+            self.delay = 0.07
+
+
+        def update(self):
+            pos_x_last = self.pos_x
+            pos_y_last = self.pos_y
+            if self.pos_x > 0:
+                self.pos_x = self.pos_x - 1
+                for i in range(self.size):
+                    uh.set_pixel(self.pos_x, self.pos_y + i, 42, 26, 14)
+                    time.sleep(self.delay)
+                    uh.set_pixel(pos_x_last, self.pos_y + i, 0, 0, 0)
+
+            elif self.pos_x == 0:
+                if self.delay > 0.01:
+                    self.delay -= 0.005
+                uh.clear()
+                self.pos_x = 16
+                self.pos_y = random.randint(0, 3)
+                self.size = random.randint(1, 4)
+                for i in range(self.size):
+                    uh.set_pixel(self.pos_x, self.pos_y + i, 42, 26, 14)
+                    time.sleep(self.delay)
+                    uh.set_pixel(pos_x_last, self.pos_y + i, 0, 0, 0)
+
+
+        def get_pos_y(self):
+            return [i + self.pos_y for i in range(self.size)]
+
+        def get_pos_x(self):
+            return self.pos_x
+___
+
+My favorite part of the code is the obstacles class because it constitutes the obstacles that move across the Unicorn Hat and without these the game would lose its gameplay component. Essentially, this chunk of code is what makes the game a game. The update method specifically is my favorite smaller chunk of code within the obstacles class because it is what makes the obstacles move across the Unicorn Hat. The update method is called when the game updates, and it subtracts 1 from the obstacles x position if its x position is greater than 0, moving it down (technically left but down if you hold the LED matrix vertically). When the obstacle's x positon reaches 0, the x position will be set back to 16 (the top), the y position and size of the obstacle will be randomized, and the delay for the obstacle to move down by 1 will be reduced by 0.005 seconds. Reducing the delay makes the obstacle fall faster every time it reaches 0, so the game gets harder as you continue. 
+
+Another couple of reasons I like this part of the code are because it represents one of the two classes that we used -- and classes were an important concept from this course because they are a key part of object-oriented programming -- and because it was one of the obstacles (get it) that we ran into during this process and overcame.
+
+
+
 
 Erica's Favorite Code
 ---
