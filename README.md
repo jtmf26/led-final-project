@@ -126,7 +126,7 @@ Erica's Favorite Code
 
 My favorite part of the code was the initializer of the class game because it is essentially the backbone of our project. I specifically liked the colors part because we were able to not just make the game cool technically, but also add a fun creative twist to it. Also we were able to use a tuple to do it learning a bit more about lists within Python on the way. Additionally, I got to experience how to make something random in Python as we struggled a little bit with that before figuring it out. List comprehension is one of the important topics of our class and I feel as thought this part of the code allowed me to both understand that better and add a fun twist to our game at the same time.
 
-Citations
+# Citations
 
 Chatterjee, C. C. (2019, July 31). Basics of the classic CNN. Medium. Retrieved May 2, 2023, from https://towardsdatascience.com/basics-of-the-classic-cnn-a3dce1225add 
 
