@@ -37,6 +37,7 @@ def buttons(pad):
 		return 'X'
 	if 291 in keys:
 		print('Y')
+		return 'Y'
 
 # D-Pad uses type EV_ABS
 # Left/Right: 	Code 0		Left value: 0	Right value: 	255
@@ -53,7 +54,9 @@ def d_pad(pad):
 	
 	if pad.absinfo(1).value == 0:
 		print('UP')
+		return 'UP'
 	if pad.absinfo(1).value == 255:
 		print('DOWN')
+		return 'DOWN'
 
 
